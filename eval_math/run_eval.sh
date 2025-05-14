@@ -1,0 +1,11 @@
+export CUDA_VISIBLE_DEVICES="0"
+MODEL_NAME_OR_PATH=ilgee/MetaMath-Mistral-7B-DFT
+OUTPUT_DIR=MetaMath-Mistral-7B-DFT
+PROMPT_TYPE="metamath"
+bash sh/eval.sh $PROMPT_TYPE $MODEL_NAME_OR_PATH $OUTPUT_DIR
+
+# export CUDA_VISIBLE_DEVICES="0"
+# MODEL_NAME_OR_PATH=ilgee/MetaMath-Mistral-7B-DFT2
+# OUTPUT_DIR=MetaMath-Mistral-7B-DFT2
+# PROMPT_TYPE="metamath"
+# bash sh/eval.sh $PROMPT_TYPE $MODEL_NAME_OR_PATH $OUTPUT_DIR

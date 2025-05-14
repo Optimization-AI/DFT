@@ -1,0 +1,42 @@
+# Model arguments
+model_name_or_path: mistralai/Mistral-7B-v0.1
+model_revision: 7231864981174d9bee8c7687c24c8344414eae6b
+torch_dtype: bfloat16
+attn_implementation: flash_attention_2
+
+# Data training arguments
+chat_template: "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}"
+dataset_mixer: 
+  siqi00/mistral_ultrafeedback_unhelpful_chatprompt_0.7_1.0_50_320 : 1.0
+dataset_splits:
+- train
+preprocessing_num_workers: 12
+
+bf16: true
+do_eval: false
+gradient_accumulation_steps: 8
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: False
+hub_model_id: dft
+learning_rate: 2.0e-6
+log_level: info
+logging_steps: 5
+lr_scheduler_type: cosine
+max_length: 1024
+max_prompt_length: 512
+num_train_epochs: 2
+optim: adamw_torch
+output_dir: ckpts/dft
+per_device_train_batch_size: 4
+per_device_eval_batch_size: 8
+push_to_hub: false
+save_strategy: "epoch"
+seed: 42
+warmup_ratio: 0.1
+tau: 1.0
+gamma: 0.85
+ref_free: false
+sample: true
+samples_per_prompt: 2
+save_only_model: true
