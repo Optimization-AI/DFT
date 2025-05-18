@@ -146,13 +146,11 @@ accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml 
 ## Citation
 
 ```bibtex
-@misc{guo2025discriminativefinetuninggenerativelarge,
+@inproceedings{guo2025discriminativefinetuninggenerativelarge,
       title={Discriminative Finetuning of Generative Large Language Models without Reward Models and Human Preference Data}, 
       author={Siqi Guo and Ilgee Hong and Vicente Balmaseda and Changlong Yu and Liang Qiu and Xin Liu and Haoming Jiang and Tuo Zhao and Tianbao Yang},
       year={2025},
-      eprint={2502.18679},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
+      booktitle={In Proceedings of International Conference on Machine Learning},
       url={https://arxiv.org/abs/2502.18679}, 
 }
 ```
